@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="images/f1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FURIOUS MAX</title>
+    <script src="modules/progressbar.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/select.css" />
+    <link rel="stylesheet" href="css/loading.css" />
+    <link rel="stylesheet" href="css/cardisplay1.css" />
+    <link rel="stylesheet" href="css/startpage.css" />
+    <link rel="stylesheet" href="css/controls.css" />
+    <link rel="stylesheet" href="./css/inGameMenu.css">
+    <link rel="stylesheet" href="./css/selectView.css">
+    <link rel="stylesheet" href="./css/leaderBoard.css" />
+  </head>
+
+  <style>
+    body{
+      background-image: url("new_UI/wall6.webp");
+    }
+  </style>
+
+  <body>
+
+
+    <div class="in-game-menu-container-outer">
+      <div class="in-game-menu-container-inner">
+  
+          <div id="timer" class="in-game-menu-item">
+              <p>Time Remaining:180</p>
+  
+          </div>
+  
+          <div id="lap-count" class="in-game-menu-item">
+              <p>Lap: 1/3</p>
+  
+          </div>
+  
+          <div id="position" class="in-game-menu-item">
+              <p>1st</p>
+  
+          </div>
+  
+          <button id="pause-button" class="in-game-menu-button">Pause</button>
+          <button id="restart-button" class="in-game-menu-button">Restart</button>
+          <button id="quit-button" class="in-game-menu-button">Quit</button>
+  
+      </div>
+  </div>
+
+  <!-- OUT of BOUNDS menu-->
+  <div class="in-game-menu-container-outer" id="out-of-bounds-menu">
+    <div class="in-game-menu-container-inner">
+
+        <p>STAY IN BOUNDS!</p>
+        <p>Better Luck Next Time</p>
+        <button id="restart-button-out-bounds" class="in-game-menu-button">Restart</button>
+        <button id="quit-button-out-bounds" class="in-game-menu-button">Quit</button>
+
+    </div>
+</div>
+
+
+
+    <section id="loading-screen">
+      <div id="loader"></div>
+    </section>
+    <!--END loading-->
+
+    <!--START startpage-->
+    <div class="startpage-outer" id="ID_startpage">
+      <div class="startpage-inner">
+        <div class="bg-text">
+      <h1 style="font-size: 50px">WELCOME TO FURIOUS CARS</h1>
+      <div class="wrapper">
+        <a class="cta" href="#" onclick="showFunc(5)">
+          <span>START</span>
+          <span>
+            <svg
+              width="66px"
+              height="43px"
+              viewBox="0 0 66 43"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                id="arrow"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+              </g>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <br />
+      <div class="wrapper">
+        <a class="cta" href="#" onclick="showFunc(3)">
+          <span>CONTROLS</span>
+          <span>
+            <svg
+              width="66px"
+              height="43px"
+              viewBox="0 0 66 43"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                id="arrow"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+              </g>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <br />
+      <div class="wrapper">
+        <a class="cta" href="#" onclick="showFunc(4)">
+          <span>CREDITS</span>
+          <span>
+            <svg
+              width="66px"
+              height="43px"
+              viewBox="0 0 66 43"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                id="arrow"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+              </g>
+            </svg>
+          </span>
+        </a>
+      </div>
+        </div>
+      </div>
+    </div>
+    <!--END startpage-->
+
+    <!--START controls-->
+    <div class="controls-outer" id="ID_controls">
+      <div class="controls-inner">
+        <div class="bg-text" style="overflow-y: scroll;">
+          <div class="button">
+            <!--This is the back button-->
+            <a href="#" onclick="showFunc(2)">
+              <p class="btnText">EXIT</p>
+              <div class="btnTwo">
+                <p class="btnText2">X</p>
+              </div>
+            </a>
+          </div>
+
+          <h1 style="font-size: 50px">GAME CONTROLS</h1>
+          <h2>-----------------------------------------------------------</h2>
+          <button class="pulse-button">W</button>
+          <button class="pulse-button">UP ARROW KEY</button>
+          <p>:To accelerate the car forward</p>
+          <h2>---------------------------------------------</h2>
+          <button class="pulse-button">S</button>
+          <button class="pulse-button">Down ARROW KEY</button>
+          <p>:To Deccelerate the car or Reverse the car</p>
+          <h2>---------------------------------------------</h2>
+          <button class="pulse-button">A</button>
+          <button class="pulse-button">LEFT ARROW KEY</button>
+          <p>:To turn the car Left</p>
+          <h2>---------------------------------------------</h2>
+          <button class="pulse-button">D</button>
+          <button class="pulse-button">RIGHT ARROW KEY</button>
+          <p>:To turn the car Right</p>
+          <h2>---------------------------------------------</h2>
+          <button class="pulse-button">SPACE BAR</button>
+          <p>:To Stop the car/ BRAKE</p>
+        </div>
+      </div>
+    </div>
+    <!--END controls-->
+
+
+    <!--START credits-->
+    <div class="credits-outer" id="ID_credits">
+      <div class="credits-inner">
+           <div class="bg-text">
+      <div class="button">
+        <!--This is the back button-->
+        <a href="#" onclick="showFunc(2)">
+          <p class="btnText">EXIT</p>
+          <div class="btnTwo">
+            <p class="btnText2">X</p>
+          </div>
+        </a>
+      </div>
+      <h1 style="font-size: 50px">GAME CREDITS</h1>
+      <h2>-----------------------------------------------------------</h2>
+      <h3>Car Models</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+      <h3>Track Models</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+      <h3>Building Models</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+      <h3>Boat Models</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+      <h3>Texture Models</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus
+        possimus blanditiis alias cum eveniet quidem enim, atque provident
+        reiciendis voluptatum rerum laboriosam illo aut asperiores, tenetur
+        voluptatibus quae officiis.
+      </p>
+    </div>
+      </div>
+    </div>
+    <!--END credits-->
+
+    <!--START select-car-->
+    <div class="select-car-outer" id="ID_select_car">
+      <div class="select-car-inner">
+        
+        <div class="bg-text-selectCar">
+
+        <h1 class="">SELECT YOUR CAR</h1>
+
+        <div class="button">
+              <!--This is the back button-->
+              <a href="#" onclick="showFunc(2)">
+                <p class="btnText">BACK</p>
+                <div class="btnTwo">
+                  <p class="btnText2">X</p>
+                </div>
+              </a>
+        </div>
+
+          <div class="polaroid">
+            <img src="new_UI/images/McLaren1.jpeg" alt="5 Terre" style="width: 100%" />
+            <div class="container">
+              <br />
+              <h3 class="textSelectCar">F1 McLaren</h3>
+              <br />
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle" id="select-mclaren">
+                <span>SELECT </span>
+              </button>
+                <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle">
+                  <span>VIEW </span>
+                </button>
+            </div>
+          </div>
+
+          <div class="polaroid">
+            <img src="new_UI/images/redbull.jpg" alt="RedBull" style="width: 100%" />
+            <div class="container">
+              <br />
+              <h3 class="textSelectCar" >F1 RedBull</h3>
+              <br />
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle" id="select-redbull">
+                <span>SELECT </span>
+              </button>
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle">
+                <span>VIEW </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="polaroid">
+            <img src="new_UI/images/Ferrari-F1-6.jpg" alt="Ferrari-F1" style="width: 100%; transform: scaleX(-1)" />
+            <div class="container">
+              <br>
+              <h3 class="textSelectCar">F1 Ferrari</h3>
+              <br>
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle" id="select-ferrari">
+                <span>SELECT </span>
+              </button>
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle">
+                <span>VIEW </span>
+              </button>
+            </div>
+          </div>
+        
+        </div>
+
+      </div>
+    </div>
+    <!--END select-car-->
+
+    <!--START select-track-->
+    <div class="select-track-outer" id="ID_select_track">
+      <div class="select-track-inner">
+        
+        <div class="bg-text-selectCar">
+
+        <h1 class="">SELECT A TRACK</h1>
+
+        <div class="button">
+              <!--This is the back button-->
+              <a href="#" onclick="showFunc(5)">
+                <p class="btnText">BACK</p>
+                <div class="btnTwo">
+                  <p class="btnText2">X</p>
+                </div>
+              </a>
+        </div>
+
+          <div class="polaroid">
+            <img src="new_UI/track_images/track1_1-2.png" alt="5 Terre" style="width: 100%; height: 100%;" />
+            <div class="container">
+              <br />
+              <h3 class="textSelectCar">Track 1</h3>
+              <br />
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle" id="select-marina">
+                <span>SELECT </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="polaroid">
+            <img src="new_UI/track_images/track2_2.png" alt="RedBull" style="width: 100%; height: 100%;" />
+            <div class="container">
+              <br />
+              <h3 class="textSelectCar" >Track 2</h3>
+              <br />
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle" id="select-desert">
+                <span>SELECT </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="polaroid">
+            <img src="new_UI/track_images/track3_3-2.png" alt="Ferrari-F1" style="width: 100%; height: 100%;" />
+            <div class="container">
+              <br>
+              <h3 class="textSelectCar">Track 3</h3>
+              <br>
+              <button class="buttonSelectCar buttonSelectCar" style="vertical-align: middle" id="select-forest">
+                <span>SELECT </span>
+              </button>
+            </div>
+          </div>
+        
+        </div>
+
+      </div>
+    </div>
+
+
+    <!--START select-view-->
+    <div class="select-view-outer" id="ID_select_view">
+      <div class="select-view-inner">
+        
+        <div class="bg-text-selectView">
+
+        <h1 class="h1SelectView">╚»★«╝ 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼 𝘾𝘼𝙈𝙀𝙍𝘼 𝙑𝙄𝙀𝙒 ╚»★«╝</h1>
+
+        <div class="button">
+              <!--This is the back button-->
+              <a href="#" onclick="showFunc(5)">
+                <p class="btnText">BACK</p>
+                <div class="btnTwo">
+                  <p class="btnText2">X</p>
+                </div>
+              </a>
+        </div>
+
+          <div class="ViewPolaroid">
+            <img src="new_UI/images/first_person.png" alt="first_person" style="width: 100%; height: 100%;" />
+            <div class="container">
+              <br />
+              <h3 class="textSelectView">First Person</h3>
+              <br />
+              <button class="buttonSelectView" id="first-person" style="vertical-align: middle">
+                <span>SELECT </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="ViewPolaroid">
+            <img src="new_UI/images/third_person.png" alt="third_person" style="width: 100%; height: 100%;" />
+            <div class="container">
+              <br />
+              <h3 class="textSelectView" >Third Person</h3>
+              <br />
+              <button class="buttonSelectView" id="third-person" style="vertical-align: middle">
+                <span>SELECT </span>
+              </button>
+            </div>
+          </div>
+        
+        </div>
+
+      </div>
+    </div>
+    <!--END select-View-->
+
+
+    <div class="leaderBoard">
+      <div class="frame">
+          <header>Leader board</header>
+          <div class="score-card">
+          <div class="leader">
+              <div class="user">
+              <div class="number">Position</div>
+              </div>
+              <div class="user-info">
+              <div class="user-name">Player Name</div>
+              <div class="player-car">Car Type</div>
+              </div>
+              <div class="laps">
+              <div class="lap-time0">Lap 1 </div>
+              <div class="lap-time0">Lap 2 </div>
+              <div class="lap-time0">Lap 3 </div>
+              <div class="lap-time0">Total Time </div>
+              </div>
+          </div>
+          <div class="leader">
+              <div class="user">
+              <div class="number">1</div>
+              <div class="user-pic1"></div>
+              </div>
+              <div class="user-info">
+              <div class="user-name" ><span id="position-1-name">Bryan</span></div>
+              <div class="player-car"><span id="position-1-car">Ferrari</span></div>
+              </div>
+              <div class="laps">
+              <div class="lap-time"><span id="position-1-lap-1-time">123</span> </div>
+              <div class="lap-time"><span id="position-1-lap-2-time"></span> </div>
+              <div class="lap-time"><span id="position-1-lap-3-time"></span> </div>
+              <div class="lap-time"><span id="position-1-total-lap-time"></span> </div>
+              </div>
+          </div>
+          <div class="leader">
+              <div class="user">
+              <div class="number">2</div>
+              <div class="user-pic2"></div>
+              </div>
+              <div class="user-info">
+              <div class="user-name" ><span id="position-2-name">Bryan</span></div>
+              <div class="player-car"><span id="position-2-car">Ferrari</span></div>
+              </div>
+              <div class="laps">
+              <div class="lap-time"><span id="position-2-lap-1-time"></span> </div>
+              <div class="lap-time"><span id="position-2-lap-2-time"></span> </div>
+              <div class="lap-time"><span id="position-2-lap-3-time"></span> </div>
+              <div class="lap-time"><span id="position-2-total-lap-time"></span> </div>
+              </div>
+          </div>
+          <div class="leader">
+              <div class="user">
+              <div class="number">3</div>
+              <div class="user-pic3"></div>
+              </div>
+              <div class="user-info">
+              <div class="user-name" ><span id="position-3-name">Bryan</span></div>
+              <div class="player-car"><span id="position-3-car">Ferrari</span></div>
+              </div>
+              <div class="laps">
+              <div class="lap-time"><span id="position-3-lap-1-time"></span> </div>
+              <div class="lap-time"><span id="position-3-lap-2-time"></span> </div>
+              <div class="lap-time"><span id="position-3-lap-3-time"></span> </div>
+              <div class="lap-time"><span id="position-3-total-lap-time"></span> </div>
+              </div>
+          </div>
+          <div class="leader">
+              <div class="user">
+              <div class="number">4</div>
+              <div class="user-pic4"></div>
+              </div>
+              <div class="user-info">
+              <div class="user-name" ><span id="position-4-name">Bryan</span></div>
+              <div class="player-car"><span id="position-4-car">Ferrari</span></div>
+              </div>
+              <div class="laps">
+              <div class="lap-time"><span id="position-4-lap-1-time"></span> </div>
+              <div class="lap-time"><span id="position-4-lap-2-time"></span> </div>
+              <div class="lap-time"><span id="position-4-lap-3-time"></span> </div>
+              <div class="lap-time"><span id="position-4-total-lap-time"></span> </div>
+              </div>
+          </div>
+          </div>
+          <button class="cta-primary" id="leader-back-start-button">Back To Start</button>
+      </div>
+  </div>
+
+   <!--<script type="module" src="js/ferrariCarDisplay.js"></script>-->
+   <script src="js/main.js" type="module"></script>
+   <script type="module" src="js/game.js"></script>
+  <script type="module", src="js/carViewer.js"></script>
+
+    <script>
+        var x1 = document.getElementById("loader");
+      var x2 = document.getElementById("ID_startpage");
+      var x3 = document.getElementById("ID_controls");
+      var x4 = document.getElementById("ID_credits");
+      var x5 = document.getElementById("ID_select_car");
+      var x6 = document.getElementById("ID_select_track");
+      //var x4 = document.getElementById("ID_HUD");
+
+      x1.style.display="block";
+      x2.style.display="none";
+      x3.style.display="none";
+      x4.style.display="none";
+      x5.style.display="none";
+      x6.style.display="none";
+
+      window.onload = function(){
+        setTimeout(function(){
+          x1.style.display="none";
+          x2.style.display="block";
+        }, 1000)
+      };
+
+      
+
+    function showFunc(id){
+        switch(id){
+          case 1:
+            displayBlock(x1, x2, x3, x4, x5, x6)
+            break;
+          case 2:
+            displayBlock(x2, x1, x3, x4, x5, x6)
+            break;
+          case 3:
+            displayBlock(x3, x2, x1, x4, x5, x6)
+            break; 
+          case 4:
+            displayBlock(x4, x2, x1, x3, x5, x6)
+            break; 
+          case 5:
+            displayBlock(x5, x2, x1, x3, x4, x6)
+            break; 
+          case 6:
+            displayBlock(x6, x5, x2, x1, x3, x4)
+            break;
+        }      
+    }
+
+    function displayBlock(x1, x2, x3, x4, x5, x6){
+      x1.style.display="block";
+      x2.style.display="none";
+      x3.style.display="none";
+      x4.style.display="none";
+      x5.style.display="none";
+      x6.style.display="none";
+    }
+    
+
+
+
+    </script>
+  </body>
+</html>
